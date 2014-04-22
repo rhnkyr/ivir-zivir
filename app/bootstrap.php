@@ -61,8 +61,8 @@ $app->assets = $assets; //assets manager
 //////// Helpers ////////////////
 //////// Routes ////////////////
 //require_once 'routes/admin/routes.php'; //Admin panel routeları
+require_once 'routes/app/place/routes.php'; //Site Mekan routeları
 require_once 'routes/app/user/routes.php'; //Site Kullanıcı routeları
-//require_once 'routes/app/place/routes.php'; //Site Mekan routeları
 require_once 'routes/app/routes.php'; //Site routeları
 
 
