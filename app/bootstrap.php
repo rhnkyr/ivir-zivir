@@ -34,6 +34,7 @@ $view->parserOptions    = array( //http://twig.sensiolabs.org/doc/api.html#envir
     'auto_reload' => true //data değiştiğinde template yeniden gösterir
 );
 $view->parserExtensions = array(new \Slim\Views\TwigExtension());
+$twig                   = $app->view()->getEnvironment();
 ///////////////////////////////
 //endregion
 /////// Assets Manager ///////
@@ -55,6 +56,7 @@ require_once 'helpers/controllers.php'; //bazı gerekli foksiyonlar
 require_once 'helpers/RedisCache.php'; //bazı gerekli foksiyonlar
 /////////////////////////////////
 ////////// DI kısmı //////////////
+$app->twig   = $twig; //Twig global
 $app->mongo  = $mongo; //App a mongo db yi global variable olarak tanımlıyoruz
 $app->redis  = new RedisCache($client); //Redis
 $app->assets = $assets; //assets manager

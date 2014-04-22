@@ -9,6 +9,7 @@
  */
 
 namespace Controllers;
+
 use App\Helpers\Collections;
 use App\Helpers\CrudTypes;
 
@@ -17,9 +18,98 @@ class PlaceController
     public function __construct()
     {
         $this->app   = \Slim\Slim::getInstance();
+        $this->twig  = $this->app->twig;
         $this->mongo = $this->app->mongo;
         $this->redis = $this->app->redis;
+
+        //Assets
+        $css = $this->app->assets->printAssets('css', array('/css/bootstrap/bootstrap.min.css', '/css/bootstrap/bootstrap-responsive.min.css', '/css/custom.css'));
+        $js  = $this->app->assets->printAssets('js', array('/js/bootstrap/bootstrap.js', '/js/custom.js'));
+
+        $this->app->view()->set('css', $css);
+        $this->app->view()->set('js', $js);
     }
+
+    //region Route Methods
+    /***
+     * Mekan detay
+     * @param $city
+     * @param $district
+     * @param $quarter
+     * @param $mainCategory
+     * @param $placeSlug
+     */
+    public function placeDetail($city, $district, $quarter, $mainCategory, $placeSlug)
+    {
+        $place = $this->mongo->where("place_city.city_slug", $city)
+            ->where("place_province.province_slug", $district)
+            //->where("place_province.quarter_slug", $quarter)
+            ->whereIn("place_category.cat_slug", array($mainCategory))
+            ->where("place_slug", $placeSlug)
+            ->limit(10)
+            ->get(Collections::PLACES);
+
+        print_r($place);
+    }
+
+    /***
+     * Kategoriye göre listeleme
+     * @param $city
+     * @param $district
+     * @param $quarter
+     * @param $mainCategory
+     */
+    public function placesByMainCategory($city, $district, $quarter, $mainCategory)
+    {
+        $places = $this->mongo->where("place_city.city_slug", $city)
+            ->where("place_province.province_slug", $district)
+            //->where("place_province.quarter_slug", $quarter)
+            ->whereIn("place_category.cat_slug", array($mainCategory))
+            ->limit(10)
+            ->get(Collections::PLACES);
+    }
+
+    /***
+     * Mahalleye göre listeleme
+     * @param $city
+     * @param $district
+     * @param $quarter
+     */
+    public function listByQuarter($city, $district, $quarter)
+    {
+        $places = $this->mongo->where("place_city.city_slug", $city)
+            ->where("place_province.province_slug", $district)
+            //->where("place_province.quarter_slug", $quarter)
+            ->limit(10)
+            ->get(Collections::PLACES);
+    }
+
+    /***
+     * İlçeye göre mahalle listeleme
+     * @param $city
+     * @param $district
+     */
+    public function listByDistrict($city, $district)
+    {
+        /*$quarters = $this->mongo->where("place_city.city_slug", $city)
+            ->where("place_province.province_slug", $district)
+            ->limit(10)
+            ->get(Collections::PLACES);*/
+    }
+
+    /***
+     * Şehre göre ilçe listeleme
+     * @param $city
+     */
+    public function listByCity($city)
+    {
+        /*$quarters = $this->mongo->where("place_city.city_slug", $city)
+                    ->where("place_province.province_slug", $district)
+                    ->limit(10)
+                    ->get(Collections::PLACES);*/
+    }
+    //endregion
+
 
     /**
      * Place _id ye göre mekan bilgilerii getirir

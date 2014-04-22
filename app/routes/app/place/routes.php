@@ -1,6 +1,5 @@
 <?php
 // Mekanlar
-//Deneme
 $app->get('/:city/:district/:quarter/:mainCategory/:placeSlug(/)', '\Controllers\PlaceController:placeDetail')->name("place_detail");
 $app->get('/:city/:district/:quarter/:mainCategory(/)', '\Controllers\PlaceController:placesByMainCategory')->name("places_by_main_category");
 $app->get('/:city/:district/:quarter(/)', '\Controllers\PlaceController:listByQuarter')->name("list_by_quarter");
