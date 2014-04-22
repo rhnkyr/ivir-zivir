@@ -1,0 +1,144 @@
+/*
+	Skin Name: Glossy Square Gray
+	Class: glossy-square-gray
+	Description: Glossy Square Gray skin for Advanced Slider jQuery plugin
+	Author: David
+*/
+
+
+/* MAIN SLIDE */
+
+.glossy-square-gray .slide-wrapper {
+
+}
+
+/* END OF MAIN SLIDE */
+
+
+/* SLIDE ARROWS */
+
+.glossy-square-gray .slide-arrows a {
+	background: url(../images/arrows.png) no-repeat;
+	width: 64px;
+	height: 64px;
+	top: 50%;
+	margin-top: -32px;
+}
+
+
+.glossy-square-gray .slide-arrows a.previous {
+	left: -32px;
+}
+
+
+.glossy-square-gray .slide-arrows a.next {
+	right: -32px;
+	background-position: -64px 0;
+}
+
+/* SLIDE ARROWS */
+
+
+
+/* THUMBNAIL IMAGE */
+
+.glossy-square-gray .thumbnail {
+	border-bottom: 6px solid #a48738;
+    opacity: 0.6;
+}
+.glossy-square-gray .thumbnail.select {
+    opacity: 1.0;
+}
+
+
+/* END OF THUMBNAIL IMAGE */
+
+
+/* THUMBNAIL SCROLLER */
+
+.glossy-square-gray .thumbnail-scroller.horizontal {
+	bottom: 0;
+	padding: 0 60px;
+	margin-top: 30px;
+    left: 0 !important;
+    /*width: 803px !important;*/
+}
+
+
+.glossy-square-gray .thumbnail-scroller.vertical {
+	right: 0;
+	padding: 50px 0;
+	margin-left: 30px;
+}
+
+
+.glossy-square-gray .thumbnail-scroller .thumbnail-wrapper {
+	margin-right: 17px;
+	padding: 0;
+}
+
+
+.glossy-square-gray .thumbnail-scroller .thumbnail.over {
+
+}
+
+.glossy-square-gray .thumbnail-scroller .thumbnail.select {
+	border-bottom: solid 6px #c73169;
+}
+
+.advanced-slider .thumbnail .caption .content h1 { font-size: 14px; color: #a48738; font-weight: bold; margin-bottom: 5px; line-height: 16px; }
+.advanced-slider .thumbnail .caption .content h2 { font-size: 13px; color: #2a2005; font-weight: normal; line-height: 17px; }
+.advanced-slider .thumbnail.select .caption .content h1 { color: #b61954; }
+
+
+/* THUMBNAIL SCROLLER ARROWS */
+.glossy-square-gray .thumbnail-scroller .arrows a {
+	background: url(../images/arrows.png) no-repeat;
+	width: 44px;
+	height: 45px;
+}
+
+
+.glossy-square-gray .thumbnail-scroller.vertical .arrows a {
+	background: url(../images/arrows.png) no-repeat;
+	width: 44px;
+	height: 45px;
+}
+
+
+.glossy-square-gray .thumbnail-scroller.horizontal .arrows a.previous {
+	left: 0;
+}
+
+
+.glossy-square-gray .thumbnail-scroller.horizontal .arrows a.next {
+	right: 0;
+	background-position: -54px 0;
+}
+
+
+.glossy-square-gray .thumbnail-scroller.vertical .arrows a.previous {
+	top: 0;
+}
+
+
+.glossy-square-gray .thumbnail-scroller.vertical .arrows a.next {
+	bottom: 0;
+	background-position: 0 -22px;
+}
+
+/* END OF THUMBNAIL SCROLLER ARROWS */
+
+
+/* THUMBNAIL SCROLLER SCROLLBAR */
+
+.glossy-square-gray .thumbnail-scroller.horizontal .scrollbar {
+	margin-top: 30px;
+}
+
+
+.glossy-square-gray .thumbnail-scroller.vertical .scrollbar {
+	margin-left: 30px;
+}
+
+/* END OF THUMBNAIL SCROLLER SCROLLBAR */

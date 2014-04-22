@@ -1,0 +1,16 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {{ msg|raw }}
+       
+    <form name="activationForm" method="post" action="{{ constant('BASE') }}activation">
+        <p>
+            <label for="email">Email:</label><input type="text" name="email" id="email" value="{{ post.email }}" >
+        </p>
+        <p>
+            <input type="submit" name="submit" id="submit" value="Aktivasyon Kodunu Gönder" >
+        </p>
+    </form>
+
+{% endblock %}

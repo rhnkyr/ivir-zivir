@@ -1,0 +1,127 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content %}
+    <div class="portlet box grey">
+        <div class="portlet-title">
+            <div class="caption"><i class="icon-user"></i>Hotel Ekle / Güncelle</div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+            <form action="#" id="content_form" class="form-horizontal" novalidate="novalidate">
+                <div class="alert alert-error hide">
+                    <button class="close" data-dismiss="alert"></button>
+                    Gerekli alanları doldurunuz!
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Hotel Adı<span class="required">*</span></label>
+
+                    <div class="controls">
+                        <input type="text" name="title" class="span6 m-wrap"
+                               value="{{ content.title|default("") }}">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Hotel Bulunduğu Yer<span class="required">*</span></label>
+
+                    <div class="controls">
+                        <input type="text" name="location" class="span6 m-wrap"
+                               value="{{ content.location|default("") }}">
+                    </div>
+                </div>
+
+                {% if content is defined %}
+                    <div class="control-group">
+                        <label class="control-label">Büyük Görsel<span class="required">*</span></label>
+
+                        <div class="controls">
+                            <input type="hidden" name="big_image" value="{{ content.big_image }}">
+                            <img id="uploaded" src="{{ constant('BASE') }}templates/uploads/{{ content.big_image }}"
+                                 style="width: 500px"/>
+                            <button class="btn red del" type="button">
+                                <i class="icon-trash icon-white"></i>
+                                <span>Sil</span>
+                            </button>
+                            <input id="big_image_file" type="file"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">küçük Görsel<span class="required">*</span></label>
+
+                        <div class="controls">
+                            <input type="hidden" name="small_image" value="{{ content.small_image }}">
+                            <img id="uploaded" src="{{ constant('BASE') }}templates/uploads/{{ content.small_image }}"
+                                 style="width: 500px"/>
+                            <button class="btn red del" type="button">
+                                <i class="icon-trash icon-white"></i>
+                                <span>Sil</span>
+                            </button>
+                            <input id="small_image_file" type="file"/>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="control-group">
+                        <label class="control-label">Büyük Görsel<span class="required">*</span></label>
+
+                        <div class="controls">
+                            <input type="hidden" name="big_image" value="">
+                            <img id="uploaded" src="" class="dn" style="width: 500px"/>
+                            <button class="btn red del dn" type="button">
+                                <i class="icon-trash icon-white"></i>
+                                <span>Delete</span>
+                            </button>
+                            <input id="big_image_file" type="file"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Küçük Görsel<span class="required">*</span></label>
+
+                        <div class="controls">
+                            <input type="hidden" name="small_image" value="">
+                            <img id="uploaded" src="" class="dn" style="width: 500px"/>
+                            <button class="btn red del dn" type="button">
+                                <i class="icon-trash icon-white"></i>
+                                <span>Delete</span>
+                            </button>
+                            <input id="small_image_file" type="file"/>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="control-group">
+                    <label class="control-label">Web Adresi<span class="required">*</span></label>
+
+                    <div class="controls">
+                        <span style="font-size: 25px; line-height: 32px;">http: //</span>
+                        <input type="text" name="link" class="span6 m-wrap"
+                               value="{{ content.link|default("") }}">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Durum</label>
+
+                    <div class="controls">
+                        <select class="span6 m-wrap" name="is_active">
+                            <option {% if content.is_active == 1 %}selected="selected"{% endif %}
+                                    value="1">Aktif
+                            </option>
+                            <option {% if content.is_active == 0 %}selected="selected"{% endif %}
+                                    value="0">Pasif
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    {% if content is defined %}
+                        <input type="hidden" value="{{ content.id }}" name="cid">
+                    {% endif %}
+                    <button type="submit" class="btn green">{{ button }}</button>
+                    <a class="btn" href="{{ urlFor("contentlist") }}">Cancel</a>
+                </div>
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+{% endblock %}
+

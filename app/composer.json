@@ -1,0 +1,16 @@
+{
+    "require": {
+        "slim/slim": "*",
+        "slim/views": "*",
+        "twig/twig": "*",
+        "alexbilbie/mongoqb": "*",
+        "swiftmailer/swiftmailer": "*",
+        "monolog/monolog": "*",
+        "flynsarmy/slim-monolog": "dev-master",
+        "sybio/image-workshop": "*",
+        "predis/predis": "*",
+        "league/fractal": "*",
+        "bdwilliams/spassets": "dev-master",
+        "usmanhalalit/strana": "1.*@dev"
+    }
+}

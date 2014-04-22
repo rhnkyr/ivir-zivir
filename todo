@@ -1,0 +1,51 @@
+Sql to mongo güzelmiş
+
+http://www.querymongo.com/
+
+
+//Paging için kullanılabilir
+https://github.com/Blaxus/Flexible-PHP-Pagination
+
+
+--------------------------------------------------------------------------------------------
+
+//sybio imagelar için kullanılabilir.
+http://phpimageworkshop.com/
+http://phpimageworkshop.com/tutorial/2/creating-thumbnails.html
+
+--------------------------------------------------------------------------------------------
+
+//Native template engine (en hızlısı)
+http://phpsavant.com/
+
+--------------------------------------------------------------------------------------------
+//Slim ile rest api yapımı
+http://www.ibm.com/developerworks/opensource/library/x-slim-rest/index.html
+http://ericbrandel.com/2013/01/24/quickly-build-restful-apis-in-php-with-slim-part-4/
+http://websec.io/2013/02/14/API-Authentication-Public-Private-Key.html
+--------------------------------------------------------------------------------------------
+
+//erhanı bağlar :)
+memcached kurdum ben
+
+memcached -vv
+
+ile konsoldan çalıştırmak gerekiyor
+
+To run memcached as a daemon
+
+memcached -d
+
+--------------------------------------------------------------------------------------------
+
+//Onuru bağlar
+http://zurmo.org/wiki/installing-memcache-on-windows
+
+//mongo da type değiştirme (tüm collection da)
+db.places.find({place_type : {$exists : true}}).forEach( function(obj) { obj.place_type = new NumberInt(obj.place_type); db.places.save(obj); } );
+
+Fractal kullanımı :
+
+--------------------------------------------------------------------------------------------
+
+http://fractal.thephpleague.com/

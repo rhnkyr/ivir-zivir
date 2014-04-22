@@ -1,0 +1,19 @@
+body {
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    background: #f6f3eb;
+}
+
+.clearfix:before, .clearfix:after { display: table; content: " "; }
+.clearfix:after { clear: both; }
+
+header { width: 100%; border-bottom: 1px solid #dcd5c3; }
+header h1.logo { float:left; padding: 20px 0; }
+header h1.logo img { display:block; border:none; }
+/*header .home-btn { background:url(../images/home_btn.png) no-repeat 0 0; text-indent:-99999px; }*/
+section { width: 100%; border-top: 1px solid #ffffff; }
+article { width: 940px; margin: 0 auto; }
+section article { padding-top: 40px; height: 500px; }
+a {text-decoration: none;}
+img { border: none;}

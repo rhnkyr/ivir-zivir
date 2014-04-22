@@ -1,0 +1,25 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {{ msg|raw }}
+       
+    <form name="registerForm" method="post" action="{{ constant('BASE') }}register">
+        <p>
+            <label for="first_name">Ad:</label><input type="text" name="first_name" id="first_name" value="{{ post.first_name }}" >
+        </p>
+        <p>
+            <label for="last_name">Soyad:</label><input type="text" name="last_name" id="last_name" value="{{ post.last_name }}" >
+        </p>
+        <p>
+            <label for="email">Email:</label><input type="text" name="email" id="email" value="{{ post.email }}" >
+        </p>
+        <p>
+            <label for="password">Şifre:</label><input type="password" name="password" id="password" >
+        </p>
+        <p>
+            <input type="submit" name="submit" id="submit" value="Kayıt Ol" >
+        </p>
+    </form>
+
+{% endblock %}

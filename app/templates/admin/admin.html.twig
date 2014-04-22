@@ -1,0 +1,42 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content %}
+    <div class="portlet box grey">
+        <div class="portlet-title">
+            <div class="caption"><i class="icon-user"></i>Yönetici Ekle / Güncelle</div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+            <form action="#" id="admin_form" class="form-horizontal" novalidate="novalidate">
+                <div class="alert alert-error hide">
+                    <button class="close" data-dismiss="alert"></button>
+                    Gerekli alanları doldurunuz!
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Kullanıcı Adı<span class="required">*</span></label>
+
+                    <div class="controls">
+                        <input type="text" name="user_name" class="span6 m-wrap"
+                               value="{{ admin.user_name|default("") }}">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Şifre<span class="required">*</span></label>
+
+                    <div class="controls">
+                        <input name="password" type="password" class="span6 m-wrap"
+                               value="{{ admin.password|default("") }}">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    {% if admin is defined %}
+                        <input type="hidden" value="{{ admin.id }}" name="cid">
+                    {% endif %}
+                    <button type="submit" class="btn green">{{ button }}</button>
+                    <a class="btn" href="{{ urlFor("adminlist") }}">İptal</a>
+                </div>
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+{% endblock %}
+

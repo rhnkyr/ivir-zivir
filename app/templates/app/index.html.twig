@@ -1,0 +1,9 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {% for r in res %}
+        {{ r.place_title }}<br>{{ r.place_loc.lng }},{{ r.place_loc.lat }}<br/>
+    {% endfor %}
+
+{% endblock %}

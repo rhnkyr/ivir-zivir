@@ -1,0 +1,675 @@
+[
+    {
+        "name": "alexbilbie/mongoqb",
+        "version": "1.3",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/alexbilbie/MongoQB.git",
+            "reference": "ad50d6158d9db230c8d0865b332d7b84f0031d85"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/alexbilbie/MongoQB/zipball/ad50d6158d9db230c8d0865b332d7b84f0031d85",
+            "reference": "ad50d6158d9db230c8d0865b332d7b84f0031d85",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2012-11-28 09:16:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "MongoQB": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alex Bilbie",
+                "email": "hello@alexbilbie.com",
+                "homepage": "http://www.httpster.org",
+                "role": "Developer"
+            }
+        ],
+        "description": "Mongo Query Builder",
+        "homepage": "https://github.com/alexbilbie/MongoQB",
+        "keywords": [
+            "database",
+            "db",
+            "mongo",
+            "mongodb"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "shasum": ""
+        },
+        "time": "2012-12-21 11:40:51",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Psr\\Log\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "sybio/image-workshop",
+        "version": "2.0.5",
+        "version_normalized": "2.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Sybio/ImageWorkshop.git",
+            "reference": "2b58bcde5205956e4b439cfaa86fb88113442d72"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Sybio/ImageWorkshop/zipball/2b58bcde5205956e4b439cfaa86fb88113442d72",
+            "reference": "2b58bcde5205956e4b439cfaa86fb88113442d72",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-11-12 22:29:20",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPImageWorkshop": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Clément Guillemain",
+                "homepage": "http://clementguillemain.fr",
+                "role": "Developer / Freelancer"
+            }
+        ],
+        "description": "Powerful PHP class using GD library to work easily with images including layer notion (like Photoshop or GIMP)",
+        "homepage": "http://phpimageworkshop.com",
+        "keywords": [
+            "class",
+            "crop",
+            "gd",
+            "image",
+            "library",
+            "resize",
+            "rotate",
+            "thumbnail",
+            "watermark"
+        ]
+    },
+    {
+        "name": "flynsarmy/slim-monolog",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Flynsarmy/SlimMonolog",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Flynsarmy/Slim-Monolog.git",
+            "reference": "62ff4a81a8b5f51b10bbe0eff5ee5ae5fcd2f587"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Flynsarmy/Slim-Monolog/zipball/62ff4a81a8b5f51b10bbe0eff5ee5ae5fcd2f587",
+            "reference": "62ff4a81a8b5f51b10bbe0eff5ee5ae5fcd2f587",
+            "shasum": ""
+        },
+        "require": {
+            "monolog/monolog": ">=1.6.0",
+            "php": ">=5.3.0",
+            "slim/slim": ">=2.3.0"
+        },
+        "time": "2013-12-19 21:40:30",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Flynsarmy\\SlimMonolog": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Flyn San",
+                "email": "flynsarmy@gmail.com",
+                "homepage": "http://www.flynsarmy.com/"
+            }
+        ],
+        "description": "Monolog logging support Slim Framework",
+        "homepage": "http://github.com/flynsarmy/Slim-Monolog",
+        "keywords": [
+            "extensions",
+            "logging",
+            "middleware"
+        ]
+    },
+    {
+        "name": "twig/twig",
+        "version": "v1.15.1",
+        "version_normalized": "1.15.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Twig.git",
+            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
+            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2014-02-13 10:19:29",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.15-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "predis/predis",
+        "version": "v0.8.5",
+        "version_normalized": "0.8.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "5f2eea628eb465d866ad2771927d83769c8f956c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/5f2eea628eb465d866ad2771927d83769c8f956c",
+            "reference": "5f2eea628eb465d866ad2771927d83769c8f956c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2014-01-16 14:10:29",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Predis": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
+            }
+        ],
+        "description": "Flexible and feature-complete PHP client library for Redis",
+        "homepage": "http://github.com/nrk/predis",
+        "keywords": [
+            "nosql",
+            "predis",
+            "redis"
+        ]
+    },
+    {
+        "name": "league/fractal",
+        "version": "0.7.0",
+        "version_normalized": "0.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/fractal.git",
+            "reference": "9e217bfb344b2c9958025a202a6938419d6b694b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/fractal/zipball/9e217bfb344b2c9958025a202a6938419d6b694b",
+            "reference": "9e217bfb344b2c9958025a202a6938419d6b694b",
+            "shasum": ""
+        },
+        "require-dev": {
+            "illuminate/pagination": "~4.1",
+            "league/phpunit-coverage-listener": "~1.1",
+            "mockery/mockery": "dev-master@dev",
+            "silex/silex": "~1.1"
+        },
+        "time": "2014-01-31 22:08:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Fractal\\": "src",
+                "League\\Fractal\\Tests\\": "tests"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Phil Sturgeon",
+                "email": "email@philsturgeon.co.uk",
+                "homepage": "http://philsturgeon.co.uk/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Handle the output of complex data structures ready for JSON output.",
+        "homepage": "https://github.com/thephpleague/fractal",
+        "keywords": [
+            "api",
+            "json",
+            "league"
+        ]
+    },
+    {
+        "name": "slim/slim",
+        "version": "2.4.3",
+        "version_normalized": "2.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/codeguy/Slim.git",
+            "reference": "4906b77a07c7bd6ff1a99aea903e940a2d4fa106"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/codeguy/Slim/zipball/4906b77a07c7bd6ff1a99aea903e940a2d4fa106",
+            "reference": "4906b77a07c7bd6ff1a99aea903e940a2d4fa106",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "ext-mcrypt": "Required for HTTP cookie encryption"
+        },
+        "time": "2014-04-05 18:33:59",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Slim": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Josh Lockhart",
+                "email": "info@joshlockhart.com",
+                "homepage": "http://www.joshlockhart.com/"
+            }
+        ],
+        "description": "Slim Framework, a PHP micro framework",
+        "homepage": "http://github.com/codeguy/Slim",
+        "keywords": [
+            "microframework",
+            "rest",
+            "router"
+        ]
+    },
+    {
+        "name": "slim/views",
+        "version": "0.1.2",
+        "version_normalized": "0.1.2.0",
+        "target-dir": "Slim/Views",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/codeguy/Slim-Views.git",
+            "reference": "f0a05ea0b654218e40de692ed7cddcad1cf4b828"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/codeguy/Slim-Views/zipball/f0a05ea0b654218e40de692ed7cddcad1cf4b828",
+            "reference": "f0a05ea0b654218e40de692ed7cddcad1cf4b828",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "slim/slim": ">=2.4.0"
+        },
+        "suggest": {
+            "smarty/smarty": "Smarty templating system",
+            "twig/twig": "Twig templating system"
+        },
+        "time": "2014-04-03 16:31:10",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Slim\\Views": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Smith",
+                "email": "a.smith@silentworks.co.uk",
+                "homepage": "http://thoughts.silentworks.co.uk/"
+            },
+            {
+                "name": "Josh Lockhart",
+                "email": "info@joshlockhart.com",
+                "homepage": "http://www.joshlockhart.com/"
+            }
+        ],
+        "description": "Smarty and Twig View Parser package for the Slim Framework",
+        "homepage": "http://github.com/codeguy/Slim-Views",
+        "keywords": [
+            "extensions",
+            "slimphp",
+            "templating"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.1.0",
+        "version_normalized": "5.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "748c01c1144713ac0118396935d10b6ceec91b68"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/748c01c1144713ac0118396935d10b6ceec91b68",
+            "reference": "748c01c1144713ac0118396935d10b6ceec91b68",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2014-03-18 09:03:27",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Chris Corbyn"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "http://swiftmailer.org",
+        "keywords": [
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.9.0",
+        "version_normalized": "1.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "1afc39690e7414412face1f8cbf67b73db34485c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1afc39690e7414412face1f8cbf67b73db34485c",
+            "reference": "1afc39690e7414412face1f8cbf67b73db34485c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "~2.4, >2.4.8",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "phpunit/phpunit": "~3.7.0",
+            "raven/raven": "~0.5",
+            "ruflin/elastica": "0.90.*"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "raven/raven": "Allow sending log messages to a Sentry server",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+        },
+        "time": "2014-04-20 16:41:26",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.9.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "bdwilliams/spassets",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bdwilliams/Spassets.git",
+            "reference": "6796f9cf9ba3aa30fd987935771dc9fa7bb036ae"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bdwilliams/Spassets/zipball/6796f9cf9ba3aa30fd987935771dc9fa7bb036ae",
+            "reference": "6796f9cf9ba3aa30fd987935771dc9fa7bb036ae",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-03-17 01:43:09",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "libs/class_spassets.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Williams",
+                "email": "brian@mxapps.com",
+                "homepage": "http://www.mxapps.com"
+            }
+        ],
+        "description": "SlimPHP Assets Manager",
+        "homepage": "https://github.com/bdwilliams/Spassets",
+        "keywords": [
+            "asset",
+            "css",
+            "javascript",
+            "minify",
+            "slim",
+            "twig"
+        ]
+    },
+    {
+        "name": "usmanhalalit/strana",
+        "version": "1.x-dev",
+        "version_normalized": "1.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/usmanhalalit/strana.git",
+            "reference": "3e5e7aaa79e67d08539ba9c3cbb3d3d6e572c66e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/usmanhalalit/strana/zipball/3e5e7aaa79e67d08539ba9c3cbb3d3d6e572c66e",
+            "reference": "3e5e7aaa79e67d08539ba9c3cbb3d3d6e572c66e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "doctrine/dbal": "2.3.4",
+            "illuminate/database": "4.1.*@dev",
+            "phpunit/phpunit": "3.7.*",
+            "usmanhalalit/pixie": "1.*@dev"
+        },
+        "time": "2013-11-13 18:38:22",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Strana": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Muhammad Usman",
+                "email": "hi@usman.it",
+                "role": "Developer"
+            }
+        ],
+        "description": "Pagination library for PHP, framework agnostic, with built-in adapters for Doctrine, Eloquent, Pixie and PHP Array.",
+        "homepage": "https://github.com/usmanhalalit/strana",
+        "keywords": [
+            "page",
+            "pagination",
+            "paginator"
+        ]
+    }
+]

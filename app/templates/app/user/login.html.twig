@@ -1,0 +1,20 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {{ msg|raw }}
+       
+    <form name="loginForm" method="post" action="{{ constant('BASE') }}login">
+        <p>
+            <label for="email">Email:</label><input type="text" name="email" id="email" value="{{ post.email }}" >
+        </p>
+        <p>
+            <label for="password">Şifre:</label><input type="password" name="password" id="password" >
+        </p>
+        <p>
+            <input type="submit" name="submit" id="submit" value="Giriş Yap" >
+        </p>
+        <p><a href="{{ constant('BASE') }}forgotten_password">Şifremi Unuttum</a></p>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content %}
+    <h4 style="margin-left: 25px">Sıralamayı ayarlamak için ilgili resmi sürükle bırak yapınız</h4>
+    <div id="contentLeft">
+        <ul>
+            {{ list|raw }}
+        </ul>
+    </div>
+{% endblock %}
+

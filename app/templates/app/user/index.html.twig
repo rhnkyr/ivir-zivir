@@ -1,0 +1,10 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {% for p in user_place_photos %}
+        {{ p.image }}<br>{{ p.place_title }}<br/>
+    {% endfor %}
+
+
+{% endblock %}

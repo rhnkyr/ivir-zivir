@@ -1,0 +1,19 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {{ msg|raw }}
+       
+    <form name="resetPasswdForm" method="post" action="{{ constant('FURL') }}">
+        <p>
+            <label for="password">Yeni Şifre:</label><input type="password" name="password" id="password" >
+        </p>
+        <p>
+            <label for="re_password">Yeni Şifre Tekrar:</label><input type="password" name="re_password" id="re_password" >
+        </p>
+        <p>
+            <input type="submit" name="submit" id="submit" value="Şifremi Değiştir" >
+        </p>
+    </form>
+
+{% endblock %}
