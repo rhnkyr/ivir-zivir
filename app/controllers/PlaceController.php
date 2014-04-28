@@ -66,9 +66,14 @@ class PlaceController
         $places = $this->mongo->where("place_city.city_slug", $city)
             ->where("place_province.province_slug", $district)
             //->where("place_province.quarter_slug", $quarter)
+            //->orWhere("place_province.province_slug", $quarter)
             ->whereIn("place_category.cat_slug", array($mainCategory))
             ->limit(10)
             ->get(Collections::PLACES);
+
+        foreach($places as $place){
+            echo $place["place_title"]."<br>";
+        }
     }
 
     /***
