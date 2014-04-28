@@ -55,7 +55,6 @@ class UserController
         $user_favs = $this->getUserFavorites($user["_id"], 0, 5);
 
         //Adamın gitmek istediği mekanlar
-
         $this->app->render('app/user/index.html.twig', array('user'              => $user,
                                                              'comments'          => $comments,
                                                              'total_comments'    => $total_comments,
@@ -98,6 +97,7 @@ class UserController
         $this->getUserReviews($user["_id"], 0, 5);
     }
 
+    //region Privates
     /**
      * _id ye göre kullanıcı bilgilerini getirir
      * @param $uid
@@ -710,5 +710,5 @@ class UserController
         $data['msg'] = (isset($msg)) ? customMsg($msg) : ((isset($v)) ? $gump->get_readable_errors(true) : ((isset($_SESSION['slim.flash']['msg'])) ? customMsg($_SESSION['slim.flash']['msg']) : ''));
         $this->app->render('app/user/reset_passwd', $data);
     }
-
+    //endregion
 } 
