@@ -19,31 +19,19 @@ class UserController
     {
         $this->app   = \Slim\Slim::getInstance();
         $this->mongo = $this->app->mongo;
-    }
-
-    /**
-     * _id ye göre kullanıcı bilgilerini getirir
-     * @param $uid
-     * @access public
-     * @return array
-     */
-    public function getUser($uid)
-    {
-        return $this->mongo->where("_id", new \MongoId($uid))
-            ->limit(1)
-            ->get(Collections::USERS);
+        $this->redis = $this->app->redis;
     }
 
     /**
      * Username e göre kullanıcı bilgilerini getirir
      * @param $username
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserByUserName($username)
+    public function index($username)
     {
 
-        $user = $this->mongo->where("user_name", $username)->limit(1)->get(Collections::USERS);
+        $user = $this->getUserByUserName($username);
         $user = $user[0];
         //print_r($user);die;
         //Adamın yorumları
@@ -83,16 +71,62 @@ class UserController
         //$this->app->render('app/user/index.html.twig', $data);
     }
 
+    public function friends($user_name)
+    {
+        $user = $this->getUserByUserName($user_name);
+        $this->getUserFriends($user["_id"]);
+    }
+
+    public function comments($user_name)
+    {
+        $this->getUserComments($user_name);
+    }
+
+    public function checkins($user_name)
+    {
+        $this->getUserComments($user_name);
+    }
+
+    public function favorites($user_name)
+    {
+        $this->getUserFavs($user_name);
+    }
+
+    public function reviews($user_name)
+    {
+        $user = $this->getUserByUserName($user_name);
+        $this->getUserReviews($user["_id"], 0, 5);
+    }
+
+    /**
+     * _id ye göre kullanıcı bilgilerini getirir
+     * @param $uid
+     * @access public
+     * @return array
+     */
+    private function getUser($uid)
+    {
+        return $this->mongo->where("_id", new \MongoId($uid))
+            ->limit(1)
+            ->get(Collections::USERS);
+    }
+
+    private function getUserByUserName($user_name)
+    {
+        return $this->mongo->where("user_name", $user_name)
+            ->limit(1)
+            ->get(Collections::USERS);
+    }
 
     /**
      * User _id ye göre kullanıcının son puanladığı mekanlarını getirir
      * @param $uid
      * @param $skip
      * @param $limit
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserFavorites($uid, $skip, $limit)
+    private function getUserFavorites($uid, $skip, $limit)
     {
         $place_ids = $this->mongo->select(array("place_id"))->where("user_id", new \MongoId($uid))->orderBy(array('added_date' => 'desc'))->get(Collections::PLACES);
 
@@ -107,10 +141,10 @@ class UserController
     /**
      * User _id ye göre kullanıcının arkadaşlarını (takip ettiklerini) getirir
      * @param $uid
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserFollowers($uid)
+    private function getUserFollowers($uid)
     {
         $user_ids = $this->mongo->select(array("uid2"))->where("uid1", new \MongoId($uid))->get(Collections::FOLLOWERS);
 
@@ -127,10 +161,10 @@ class UserController
      * @param $uid
      * @param $skip
      * @param $limit
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserReviews($uid, $skip, $limit)
+    private function getUserReviews($uid, $skip, $limit)
     {
         $place_ids = $this->mongo->select(array("pid"))->where("uid", new \MongoId($uid))->where("status", 1)->orderBy(array('added_date' => 'desc'))->get(Collections::COMMENTS);
 
@@ -142,16 +176,15 @@ class UserController
 
     }
 
-
     /**
      * User _id ye göre kullanıcının eklediği mekan resimlerini getirir
      * @param $uid
      * @param $skip
      * @param $limit
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserPlacePhotos($uid, $skip, $limit)
+    private function getUserPlacePhotos($uid, $skip, $limit)
     {
         //$photos = $this->mongo->where("user_id", new \MongoId($uid))->where("status", 1)->skip($skip)->limit($limit)->get(Collections::PHOTOS);
         $photos = $this->mongo->where("user_id", new \MongoId($uid))->where("status", 1)->orderBy(array('added_date' => 'desc'))->get(Collections::PHOTOS);
@@ -178,14 +211,14 @@ class UserController
     }
 
     /**
-     * User _id ye göre kullanıcı yorumlarını getirir
-     * @param $uid
-     * @access public
+     * User name e göre kullanıcı yorumlarını getirir
+     * @param $user_name
+     * @access private
      * @return array
      */
-    public function getUserComments($uid)
+    private function getUserComments($user_name)
     {
-        return $this->mongo->where("uid", new \MongoId($uid))
+        return $this->mongo->where("user_name", $user_name)
             ->where("status", 1)
             ->get(Collections::COMMENTS);
     }
@@ -193,10 +226,10 @@ class UserController
     /**
      * User _id ye göre kullanıcının favori mekanlarını getirir
      * @param $uid
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserFavs($uid)
+    private function getUserFavs($uid)
     {
         $place_ids = $this->mongo->select(array("place_id"))
             ->where("user_id", new \MongoId($uid))
@@ -214,10 +247,10 @@ class UserController
     /**
      * User _id ye göre kullanıcının favorilerine mekanı ekler
      * @param $fav
-     * @access public
+     * @access private
      * @return array
      */
-    public function addUserFavs($fav = array())
+    private function addUserFavs($fav = array())
     {
         $data = array(
             "user_id"    => new \MongoId($fav["user_id"]),
@@ -234,10 +267,10 @@ class UserController
     /**
      * User _id ye göre kullanıcının gitmek istediği mekanlarını getirir
      * @param $uid
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserWishList($uid)
+    private function getUserWishList($uid)
     {
         $place_ids = $this->mongo->select(array("place_id"))
             ->where("user_id", new \MongoId($uid))
@@ -255,10 +288,10 @@ class UserController
     /**
      * User _id ye göre kullanıcının gitmek istediği mekanı ekler
      * @param $wish
-     * @access public
+     * @access private
      * @return array
      */
-    public function addUserWishList($wish = array())
+    private function addUserWishList($wish = array())
     {
         $data = array(
             "user_id"    => new \MongoId($wish["user_id"]),
@@ -279,10 +312,10 @@ class UserController
     /**
      * User _id ye göre kullanıcının arkadaşlarını (takip ettiklerini) getirir
      * @param $uid
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserFriends($uid)
+    private function getUserFriends($uid)
     {
         $user_ids = $this->mongo->select(array("uid2"))
             ->where("uid1", new \MongoId($uid))
@@ -301,10 +334,10 @@ class UserController
      * Field a göre üye getirir
      * @param $field
      * @param $value
-     * @access public
+     * @access private
      * @return array
      */
-    public function getUserCustom($field, $value)
+    private function getUserByField($field, $value)
     {
         return $this->mongo->where($field, $value)
             ->limit(1)
@@ -315,10 +348,10 @@ class UserController
     /**
      * Yeni üye kaydı.
      * @param $da
-     * @access public
+     * @access private
      * @return array
      */
-    public function addUser($da)
+    private function addUser($da)
     {
         $id     = new \MongoId();
         $ac_key = sha1($id . time() . rand(0, 50));
@@ -372,7 +405,13 @@ class UserController
         }
     }
 
-    public function updateUserCustom($where, $data)
+    /**
+     * İstenilen kolona göre güncelleme
+     * @param $where
+     * @param $data
+     * @return mixed
+     */
+    private function updateUserByField($where, $data)
     {
         return $this->mongo->where($where)
             ->set($data)
@@ -380,7 +419,12 @@ class UserController
 
     }
 
-    public function updateLastLogin($uid)
+    /**
+     * Son giriş güncelleme
+     * @param $uid
+     * @return mixed
+     */
+    private function updateLastLogin($uid)
     {
         return $this->mongo->where(array('_id' => new \MongoId($uid)))
             ->set(array('last_login' => new \MongoDate(timeDiffForMongo())))
@@ -443,9 +487,12 @@ class UserController
         $this->app->render('app/user/register', $data);
     }
 
+    /**
+     * Kullanıcı giriş kontorl
+     */
     public function login()
     {
-        if ($this->app->request()->isPost()) {
+        if ($this->app->request->isPost()) {
 
             $gump = new \GUMP();
 

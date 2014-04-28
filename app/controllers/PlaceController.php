@@ -21,13 +21,15 @@ class PlaceController
         $this->twig  = $this->app->twig;
         $this->mongo = $this->app->mongo;
         $this->redis = $this->app->redis;
+        $this->user  = isset($_SESSION["user"]);
 
         //Assets
-        $css = $this->app->assets->printAssets('css', array('/css/bootstrap/bootstrap.min.css', '/css/bootstrap/bootstrap-responsive.min.css', '/css/custom.css'));
-        $js  = $this->app->assets->printAssets('js', array('/js/bootstrap/bootstrap.js', '/js/custom.js'));
-
-        $this->app->view()->set('css', $css);
-        $this->app->view()->set('js', $js);
+        //$css = $this->app->assets->printAssets('css', array('/css/bootstrap/bootstrap.min.css', '/css/bootstrap/bootstrap-responsive.min.css', '/css/custom.css'));
+        //$js  = $this->app->assets->printAssets('js', array('/js/bootstrap/bootstrap.js', '/js/custom.js'));
+        //$this->app->view()->set('css', $css);
+        //$this->app->view()->set('js', $js);
+        //twigte css|raw
+        //twigte js|raw
     }
 
     //region Route Methods
@@ -244,7 +246,7 @@ class PlaceController
             "comment"    => $comment["content"],
             "parent_id"  => 0,
             "like_count" => 0,
-            "added_date" => new MongoDate(timeDiffForMongo()),
+            "added_date" => new \MongoDate(timeDiffForMongo()),
             "status"     => 0
         );
 
