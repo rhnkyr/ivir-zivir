@@ -33,6 +33,18 @@ class PlaceController
     }
 
     //region Route Methods
+
+    public function placeFilter($city, $district, $quarter, $mainCategory, $filters)
+    {
+
+        //$a = $this->app->request()->getPathInfo();
+        //print_r($a);
+        var_dump($filters);
+
+
+        //print_r($place);
+    }
+
     /***
      * Mekan detay
      * @param $city
@@ -43,6 +55,12 @@ class PlaceController
      */
     public function placeDetail($city, $district, $quarter, $mainCategory, $placeSlug)
     {
+
+        $a = $this->app->request()->getPathInfo();
+        print_r($a);
+        //echo $this->app->router()->getMatchedRoutes();
+
+        die;
         $place = $this->mongo->where("place_city.city_slug", $city)
             ->where("place_province.province_slug", $district)
             //->where("place_province.quarter_slug", $quarter)
