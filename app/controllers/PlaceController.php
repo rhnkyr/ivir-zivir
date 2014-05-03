@@ -34,15 +34,33 @@ class PlaceController
 
     //region Route Methods
 
-    public function placeFilter($city, $district, $quarter, $mainCategory, $filters)
+
+    /**
+     * Mekanın tüm özelliklerini içerenleri getirir
+     * @param $filters
+     */
+    public function placeFilterAll($filters)
     {
 
-        //$a = $this->app->request()->getPathInfo();
-        //print_r($a);
-        var_dump($filters);
+        $place = $this->mongo->whereInAll("place_tag.tag_slug", $filters)
+            ->limit(10)
+            ->get(Collections::PLACES);
 
+        print_r($place);
+    }
 
-        //print_r($place);
+    /**
+     * Mekanın baze özelliklerini içerenleri getirir
+     * @param $filters
+     */
+    public function placeFilterSome($filters)
+    {
+
+        $place = $this->mongo->whereIn("place_tag.tag_slug", $filters)
+            ->limit(10)
+            ->get(Collections::PLACES);
+
+        print_r($place);
     }
 
     /***
@@ -55,17 +73,33 @@ class PlaceController
      */
     public function placeDetail($city, $district, $quarter, $mainCategory, $placeSlug)
     {
-
-        $a = $this->app->request()->getPathInfo();
-        print_r($a);
-        //echo $this->app->router()->getMatchedRoutes();
-
-        die;
         $place = $this->mongo->where("place_city.city_slug", $city)
             ->where("place_province.province_slug", $district)
             //->where("place_province.quarter_slug", $quarter)
             ->whereIn("place_category.cat_slug", array($mainCategory))
             ->where("place_slug", $placeSlug)
+            ->limit(10)
+            ->get(Collections::PLACES);
+
+        print_r($place);
+    }
+
+    /**
+     * Mekanın yerine ve özelliklereine göre getirir
+     * @param $city
+     * @param $district
+     * @param $quarter
+     * @param $mainCategory
+     * @param $filters
+     */
+    public function placeFilterByLocation($city, $district, $quarter, $mainCategory, $filters)
+    {
+
+        $place = $this->mongo->where("place_city.city_slug", $city)
+            ->where("place_province.province_slug", $district)
+            //->where("place_province.quarter_slug", $quarter)
+            ->whereIn("place_category.cat_slug", array($mainCategory))
+            ->whereIn("place_tag.tag_slug", $filters)
             ->limit(10)
             ->get(Collections::PLACES);
 
@@ -89,8 +123,8 @@ class PlaceController
             ->limit(10)
             ->get(Collections::PLACES);
 
-        foreach($places as $place){
-            echo $place["place_title"]."<br>";
+        foreach ($places as $place) {
+            echo $place["place_title"] . "<br>";
         }
     }
 
