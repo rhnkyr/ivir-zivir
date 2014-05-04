@@ -46,11 +46,11 @@ class PlaceController
             ->limit(10)
             ->get(Collections::PLACES);
 
-        print_r($place);
+        var_dump($place);
     }
 
     /**
-     * Mekanın baze özelliklerini içerenleri getirir
+     * Mekanın bazı özelliklerini içerenleri getirir
      * @param $filters
      */
     public function placeFilterSome($filters)
@@ -60,7 +60,7 @@ class PlaceController
             ->limit(10)
             ->get(Collections::PLACES);
 
-        print_r($place);
+        var_dump($place);
     }
 
     /***
